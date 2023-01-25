@@ -1,0 +1,152 @@
+html, body, .mainWrapper{
+    height: 100%;
+}
+.default-settings{
+    height: 100%;
+    padding-top: 20px;
+    
+    &__title{
+        padding: 0px 20px 50px 20px;
+        font-family: 'Dosis', sans-serif;
+
+        h1 {
+            font-family: 'Dosis', sans-serif;
+            font-size: 30px;
+            line-height: 1.5;
+            margin: 0 0 10px 0;
+
+            &:after{
+                content: '';
+                display: block;
+                width: 50px;
+                height: 2px;
+                background-color: orange;
+                margin-bottom: 10px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            font-family: 'Dosis', sans-serif;
+            font-weight: 400;
+            color: #444;
+        }
+    }
+
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        min-height: calc(100vh - 164px);
+
+        &--columns{
+            flex: 0 0 50%;
+            max-width: 50%;
+
+            &.editor{
+                background-color: #111e29;
+                color: #fff;
+                padding: 20px;
+                overflow: hidden;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+
+                textarea{
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    color: #fff;
+                    border: 0;
+                    resize: none;
+                    overflow: visible;
+                    height: 100%;
+
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                        cursor: pointer;
+                    }
+                    &::-webkit-scrollbar-track {
+                        background: rgba(255, 255, 255, 0.137); 
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        background: rgba(255, 255, 255, 0.137); 
+                    }
+                    &::-webkit-scrollbar-thumb:hover {
+                        background: rgba(255, 255, 255, 0.137); 
+                    }
+                }
+            }
+
+            &.visual{
+                padding: 0 20px;
+
+                .title{
+                    font-family: 'Dosis', sans-serif;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin-bottom: 5px;
+                    color: #b4b4b4;
+                }
+            }
+        }
+    }
+
+    .block-space{
+        padding: 60px 0;
+
+        + .block-space{
+            padding-top: 0;
+        }
+    }
+
+    .button-column{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .visual--tabs{
+        border-bottom: 1px solid #111e29;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        > div{
+            a{
+                border-radius: 5px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                background-color: #111e29;
+                color: #fff;
+                padding: 5px 10px;
+                cursor: pointer;
+                display: block;
+                font-family: 'Dosis', sans-serif;
+                font-weight: 400;
+                
+                &:hover{
+                    background-color: #333;
+                }
+            }
+
+
+            &:not(.active){
+                a{
+                    border: 0;
+                    background-color: transparent;
+                    color: #111;
+                }
+            }
+        }
+
+    }
+    
+    .tab-content{
+        display: none;
+        padding-top: 50px;
+
+        &.active{
+            display: block;
+        }
+    }
+}

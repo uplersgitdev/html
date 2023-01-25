@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{%- include head.html -%}
+
+<body>
+  
+  <!-- header start -->
+  {% include header.html %}
+  <!-- header end -->
+
+  <main class="mainWrapper">
+    {{ content }}
+  </main>
+
+  <!-- footer start -->
+  {% include footer.html %}
+  <!-- footer end -->
+
+  <script src="../assets/js/editor.js"></script>
+</body>
+</html>

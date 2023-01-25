@@ -1,0 +1,12 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+body {
+    color: $drak-grey;
+    font-size: $base; 
+    line-height: 1.48;
+}
+
+

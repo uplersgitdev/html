@@ -1,0 +1,26 @@
+---
+layout: home
+---
+
+<section class="default-settings">
+    <div class="default-settings__title">
+        <h1>Default Settings</h1>
+        <p>Write below in right column to set default styling of the elements</p>
+    </div>
+
+    <div class="default-settings__row">
+        <div class="default-settings__row--columns visual">
+            <nav class="visual--tabs">
+                <div><a href="#tab1">Elements</a></div>
+                <div class="active"><a href="#tab2">Contents</a></div>
+            </nav>
+
+            {% include theme/default/visual.html %}
+
+            <div id="viewer"></div>
+        </div>
+        <div class="default-settings__row--columns editor">
+            {% include theme/default/editor.html %}
+        </div>
+    </div>
+</section>

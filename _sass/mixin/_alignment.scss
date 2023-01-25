@@ -1,0 +1,89 @@
+// Text alignment
+$textAlign : left, right, center;
+
+@mixin text-align {
+    @each $align in $textAlign{
+        .text-#{$align}{
+            text-align: $align;
+        }
+    }    
+}
+@if map.get($settings, text-align) == true { 
+    @include text-align;
+}
+
+// Absolute alignment
+@mixin absolute-align($direction: both) {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  @if index("horizontal" "h", $direction) {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  } @else if index("vertical" "v", $direction) {
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+  } @else if index("none", $direction) {
+    top: auto;
+    left: auto;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+  } @else {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+}
+
+@if map.get($settings, absolute-align) == true { 
+    .align-center{
+        @include absolute-align;
+    }
+    .align-horizontal,
+    .align-h{
+        @include absolute-align(h);
+    }
+    .align-vertical,
+    .align-v{
+        @include absolute-align(v);
+    }
+    .align-none{
+        @include absolute-align(none);
+    }
+}
+
+
+// Table alignment
+@mixin vertical-align($content: null, $content-height: auto, $container-height: null) {
+    display: table;
+
+    @if $container-height != null {
+        height: $container-height;
+    }
+
+    #{$content} {
+        display: table-cell;
+        vertical-align: middle;
+        height: $content-height;
+    }
+}
+
+@if map.get($settings, table-align) == true { 
+    .table{
+        @include vertical-align(".v-align");
+    }
+}

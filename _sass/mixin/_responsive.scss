@@ -1,0 +1,17 @@
+@mixin mq-max($device) {
+    @media screen and (max-width: ($device - 1px)) {
+        @content;
+    }
+}
+
+@mixin mq-min($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
+
+@mixin mq-min-max($device-min, $device-max) {
+    @media screen and (min-width: $device-min) and (max-width: ($device-max - 1)) {
+        @content;
+    }
+}

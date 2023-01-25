@@ -1,0 +1,84 @@
+// COLORS
+$white                  :   #ffffff;
+$black                  :   #000000;
+$drak-grey              :   #1F222D;
+$yellow                 :   #58B368;
+$light-yellow           :   #EFEEB4;
+$green                  :   #309975;
+$light-green            :   #58B368;
+
+// MEDIA SCREEN
+$xs                     :   376px;
+$sm                     :   576px;
+$md                     :   768px;
+$lg                     :   992px;
+$gl                     :   1024px;
+$xl                     :   1400px;
+
+// CONTAINER
+$container:
+    "default" 1200px,
+    "large" 1400px,
+    "small" 1000px,
+    "aaa"   900px,
+    "full"  100%;
+
+
+// SPACING
+$gutter                 :   15px;
+$element-space          :   20px;
+$section-space:
+    "top" 80px,
+    "bottom" 80px, 
+    "left" 50px, 
+    "right" 50px;
+
+$spacer: (
+    "margin": (
+        "default" 10px 10px 10px 20px,
+        "b-10" null null 10px null,
+    ),
+    "padding": (
+        "default" 10px 10px 10px 20px,
+        "b-10" null null 10px null,
+    )
+);
+
+// COLUMNS
+$column-count           :   12;
+$row                    :   -($gutter);
+
+// FONTS
+$base                   :   16px;
+$font-copy              :   18px;
+
+// TAGS STYLE = tag, font-family, font-size, line-height, font-weight, $color, letter-spacing, margin-top, margin-bottom, 
+$mobile-first: true;
+$typography: (
+    "tags": (
+        "default": (
+            "h1, .h1" arial 100px 1.5 bold null 0 0 $element-space,
+            "h2" arial 50px 1.5 bold $black null 0 $element-space,
+            "h3" arial 40px 1.5 bold null 0 0 $element-space,
+            "h4" arial 30px 1.5 bold null 0 0 $element-space,
+            "h5" arial 20px 1.5 bold null 0 0 $element-space,
+            "h6" arial 10px 1.5 bold null 0 0 ($element-space - 10px),
+        ),
+        $xl: (
+            "h1, .h1" arial 60px 1.5 bold null 0 0 $element-space,
+            "h2" arial 50px 1.5 bold $black null 0 $element-space,
+            "h3" arial 40px 1.5 bold null 0 0 $element-space,
+            "h4" arial 30px 1.5 bold null 0 0 $element-space,
+            "h5" arial 20px 1.5 bold null 0 0 $element-space,
+            "h6" arial 10px 1.5 bold null 0 0 ($element-space - 10px),
+        ),
+        "tablet": (
+            "h1, .h1" arial 50px 1.5 bold null 0 0 $element-space,
+            "h2" arial 50px 1.5 bold $black null 0 $element-space,
+            "h3" arial 40px 1.5 bold null 0 0 $element-space,
+            "h4" arial 30px 1.5 bold null 0 0 $element-space,
+            "h5" arial 20px 1.5 bold null 0 0 $element-space,
+            "h6" arial 10px 1.5 bold null 0 0 ($element-space - 10px),
+        )  
+    )
+);

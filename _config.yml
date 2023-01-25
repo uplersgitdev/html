@@ -6,6 +6,9 @@ port: 4444
 url: "uplersgitdev.github.io"
 baseurl: "/html"
 
+# url: ""
+# baseurl: ""
+
 # Build settings
 theme: minima
 plugins:
