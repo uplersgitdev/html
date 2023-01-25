@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $margin: map.get($spacer, margin);
 $padding: map.get($spacer, padding);
 
