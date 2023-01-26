@@ -1,18 +1,25 @@
 html, body, .mainWrapper{
     height: 100%;
 }
+
+body{
+     background-color: #d4fffd;
+}
+
 .default-settings{
-    height: 100%;
-    padding-top: 20px;
+    padding: 20px 0;
+    
     
     &__title{
         padding: 0px 20px 50px 20px;
         font-family: 'Dosis', sans-serif;
 
         h1 {
-            font-family: 'Dosis', sans-serif;
             font-size: 30px;
             line-height: 1.5;
+            font-weight: bold;
+            color: #111e29;
+            font-family: 'Dosis', sans-serif;
             margin: 0 0 10px 0;
 
             &:after{
@@ -41,14 +48,23 @@ html, body, .mainWrapper{
         &--columns{
             flex: 0 0 50%;
             max-width: 50%;
+            display: flex;
+            flex-direction: column;
 
             &.editor{
-                background-color: #111e29;
-                color: #fff;
-                padding: 20px;
-                overflow: hidden;
-                border-top-left-radius: 10px;
-                border-bottom-left-radius: 10px;
+                padding: 0 20px;
+
+                .editor-inner{
+                    background-color: #111e29;
+                    color: #fff;
+                    padding: 50px 20px 20px 20px;
+                    border-radius: 10px;
+                    height: 100%;
+
+                    .tab-content{
+                        height: 100%;                        
+                    }
+                }
 
                 textarea{
                     width: 100%;
@@ -58,7 +74,7 @@ html, body, .mainWrapper{
                     border: 0;
                     resize: none;
                     overflow: visible;
-                    height: 100%;
+                    
 
                     &::-webkit-scrollbar {
                         width: 5px;
@@ -86,6 +102,13 @@ html, body, .mainWrapper{
                     margin-bottom: 5px;
                     color: #b4b4b4;
                 }
+
+                #tab-contents{
+                    background-color: #fff;
+                    border: 1px solid #c3bfb9;
+                    border-radius: 10px;
+                    padding: 60px 20px;
+                }
             }
         }
     }
@@ -106,18 +129,16 @@ html, body, .mainWrapper{
     }
 
     .visual--tabs{
-        border-bottom: 1px solid #111e29;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+        margin-bottom: 10px;
 
         > div{
             a{
                 border-radius: 5px;
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
-                background-color: #111e29;
-                color: #fff;
+                background-color: orange;
+                color: #000;
                 padding: 5px 10px;
                 cursor: pointer;
                 display: block;
@@ -126,6 +147,7 @@ html, body, .mainWrapper{
                 
                 &:hover{
                     background-color: #333;
+                    color: #fff;
                 }
             }
 
@@ -133,8 +155,8 @@ html, body, .mainWrapper{
             &:not(.active){
                 a{
                     border: 0;
-                    background-color: transparent;
-                    color: #111;
+                    background-color: #fff;
+                    color: #333;
                 }
             }
         }
@@ -143,10 +165,41 @@ html, body, .mainWrapper{
     
     .tab-content{
         display: none;
-        padding-top: 50px;
+        position: relative;
+
+        .editor-utility-nav{
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            z-index: 10;
+            color: #fff;
+            padding: 5px 15px 15px 0;
+
+            .fa{
+                cursor: pointer;
+
+                &:not(:first-child){
+                    margin-left: 10px;
+                    padding-left: 10px;
+                    border-left: 1px solid rgba(255,255,255, 0.3);
+                }
+
+                &:hover{
+                    color: orange;
+                }
+            }
+        }
 
         &.active{
             display: block;
         }
+    }
+
+    .editor-options{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        
     }
 }

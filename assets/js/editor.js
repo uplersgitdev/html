@@ -1,30 +1,33 @@
-// Visual tabs
-// Define variables
-var tabLabels = document.querySelectorAll(".visual--tabs > div");
-var tabPanes = document.getElementsByClassName("tab-content");
+// Tabs
+let tabMain = document.querySelectorAll(".tabs-main");
 
-function activateTab(e) {
-  e.preventDefault();
-  
-  // Deactivate all tabs
-  tabLabels.forEach(function(label, index){
-    label.classList.remove("active");
-  });
-  [].forEach.call(tabPanes, function(pane, index){
-    pane.classList.remove("active");
-  });
-  
-  // Activate current tab
-  e.target.parentNode.classList.add("active");
-  var clickedTab = e.target.getAttribute("href");
-  document.querySelector(clickedTab).classList.add("active");
-}
+tabMain.forEach(function(tabs, index){
 
-// Apply event listeners
-tabLabels.forEach(function(label, index){
-  label.addEventListener("click", activateTab);
+    let tabLabels = tabs.querySelectorAll(".tab-item");
+    let tabPanels = tabs.querySelectorAll(".tab-content");
+
+    tabLabels.forEach(function(labels, i){
+        labels.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+
+            tabLabels.forEach(function(siblings){
+                siblings.classList.remove('active');
+            })
+            labels.classList.add("active");
+
+            e.target.parentNode.classList.add("active");
+            let clickedTab = e.target.getAttribute("href");
+            let showContent = document.querySelector(clickedTab);
+
+            tabPanels.forEach(function(siblings){
+                siblings.classList.remove('active');
+            })
+
+            showContent.classList.add("active");
+        })
+    })
 });
-
 
 
 // Editor
@@ -49,3 +52,27 @@ function update(i) {
         j=1;
     }
 }
+
+// copy to clipboard
+
+let textCopy = document.querySelectorAll(".copy");
+
+textCopy.forEach(function(ele){
+    
+    let parentEle = ele.closest(".editor-utility-nav");
+    let textarea = parentEle.nextElementSibling;
+
+    ele.addEventListener('click', function(e){
+        document.execCommand('copy');
+    })
+
+    ele.addEventListener('copy', function(ee){
+        ee.preventDefault();
+
+        if(ee.clipboardData){
+            ee.clipboardData.setData("text/plain", textarea.value);
+        }
+    })
+
+})
+

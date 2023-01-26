@@ -9,18 +9,24 @@ layout: home
     </div>
 
     <div class="default-settings__row">
-        <div class="default-settings__row--columns visual">
+        <div class="default-settings__row--columns tabs-main visual">
             <nav class="visual--tabs">
-                <div><a href="#tab1">Elements</a></div>
-                <div class="active"><a href="#tab2">Contents</a></div>
+                <div class="tab-item"><a href="#tab1">Elements</a></div>
+                <div class="tab-item active"><a href="#tab2">Contents</a></div>
             </nav>
 
-            {% include theme/default/visual.html %}
+            {% include theme/default/visual/visual.html %}
 
             <div id="viewer"></div>
         </div>
-        <div class="default-settings__row--columns editor">
-            {% include theme/default/editor.html %}
+        <div class="default-settings__row--columns tabs-main editor">
+            <div class="editor-options">
+                {% include theme/default/editor/editor-options.html %}
+            </div>
+
+            <div class="editor-inner">
+                {% include theme/default/editor/editor.html %}
+            </div>
         </div>
     </div>
 </section>
