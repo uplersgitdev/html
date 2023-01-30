@@ -3,11 +3,11 @@ email: your-email@example.com
 description: ""
 
 port: 4444
-# url: "uplersgitdev.github.io"
-# baseurl: "/html"
+url: "uplersgitdev.github.io"
+baseurl: "/html"
 
-url: ""
-baseurl: ""
+# url: ""
+# baseurl: ""
 
 # Build settings
 theme: minima
