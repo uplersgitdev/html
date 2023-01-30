@@ -74,7 +74,9 @@ body{
                     border: 0;
                     resize: none;
                     overflow: visible;
-                    
+                    font-size: 14px;
+                    line-height: 1.75;
+                    letter-spacing: 0.5px;
 
                     &::-webkit-scrollbar {
                         width: 5px;
