@@ -32,8 +32,9 @@ tabMain.forEach(function(tabs, index){
 
 // Editor
 function textareaUpdate(){
+    let resetCssCode=document.getElementById("resetCssCode").value;
     let cssCode=document.getElementById("cssCode").value;
-    let cssText="<style>"+cssCode+"</style>";
+    let cssText="<style>"+ resetCssCode + cssCode +"</style>";
     let viewer=document.getElementById('viewer');
     viewer.innerHTML = cssText;
 }
@@ -76,3 +77,15 @@ textCopy.forEach(function(ele){
 
 })
 
+// clear editor
+
+let clearEditor = document.querySelectorAll(".clear");
+
+clearEditor.forEach(function(ele){
+    let parentEle = ele.closest(".editor-utility-nav");
+    let textarea = parentEle.nextElementSibling;
+
+    ele.addEventListener('click', function(e){
+        textarea.value = "";
+    })
+});

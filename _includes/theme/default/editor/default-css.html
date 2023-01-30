@@ -1,4 +1,13 @@
 <textarea id="cssCode"  placeholder="Type CSS code here" spellcheck="false" oninput="update(0)" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}if(event.keyCode==8){update(1);}">
+body{
+    margin:0;
+    font-family:'Open Sans';
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.5;
+    color:#212529;
+}
+
 /*  HEADINGS
 -----------------------------------------------*/
 h1, .h1{
